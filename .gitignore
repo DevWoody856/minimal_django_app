@@ -152,12 +152,12 @@ node_modules/
 staticfiles/
 
 #settings
-simple_app/settings/dev.py
+#simple_app/settings/dev.py
 simple_app/old_settings.py
 
 docker file
-Dockerfile
+#Dockerfile
 Dockerfile.prod
-docker-compose.yaml
+#docker-compose.yaml
 docker-compose.prod.yaml
 entrypoint.sh

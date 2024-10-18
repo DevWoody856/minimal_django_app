@@ -1,0 +1,31 @@
+version: "3.11"
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8002"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    ports:
+      - "55432:5432"
+
+volumes:
+  dbdata:
