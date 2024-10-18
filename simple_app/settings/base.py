@@ -1,7 +1,6 @@
 from pathlib import Path
 import environ
 import os
-from urllib.parse import urlparse
 
 env = environ.Env()
 

@@ -1,6 +1,8 @@
-from .base import *
+import os
 
-if os.getenv('simple_app') == 'prod':
-   from .prod import *
+ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT', 'dev')
+
+if ENVIRONMENT == 'prod':
+    from .prod import *
 else:
-   from .dev import *
+    from .dev import *
