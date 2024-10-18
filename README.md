@@ -1,0 +1,1 @@
+This is a minimal Django application for testing deployments on the DigitalOcean App Platform.
